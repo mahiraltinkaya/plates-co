@@ -9,6 +9,7 @@ const products: IProduct[] = [
     unit: "USD",
     color: "#f44336",
     img: "https://freepngimg.com/thumb/food/139184-food-plate-healthy-free-photo.png",
+    qty: 1,
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const products: IProduct[] = [
     unit: "USD",
     color: "#43a047",
     img: "https://www.seekpng.com/png/full/296-2968423_shawarma-plate-png-italian-food-plate-png.png",
+    qty: 1,
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ const products: IProduct[] = [
     unit: "USD",
     color: "#0288d1",
     img: "https://freepngimg.com/download/food/139178-food-plate-diet-free-transparent-image-hd.png",
+    qty: 1,
   },
 ];
 
@@ -39,25 +42,17 @@ const campaings = [
   },
 ];
 
-const conditions = [
+const deliveries = [
   {
     id: 1,
-    low: 90,
-    hight: -1,
-    delivery: 0,
-  },
-  {
-    id: 2,
-    low: 50,
-    hight: 89,
+    price: 49.99,
     delivery: 2.95,
   },
   {
-    id: 3,
-    low: 0,
-    hight: 49,
-    delivery: 4.95,
+    id: 2,
+    price: 89.99,
+    delivery: 0,
   },
 ];
 
-export { products, conditions, campaings };
+export { products, deliveries, campaings };

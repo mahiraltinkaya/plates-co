@@ -19,12 +19,37 @@
     background-color: rgba(0, 0, 0, 0.222);
   }
   .component {
+    margin: 0 10px;
     width: 90%;
-    max-width: 470px;
     min-height: 300px;
+    max-width: 470px;
+
     background-color: #fff;
     z-index: inherit;
-    border-radius: 15px;
-    padding: 20px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+}
+
+.checkout__button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover {
+    transition: 0.3s;
+    background-color: orangered;
+    color: white;
+  }
+  &:active {
+    background-color: rgb(221, 59, 1);
   }
 }

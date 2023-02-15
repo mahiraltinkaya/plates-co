@@ -4,7 +4,11 @@ import styles from "modules/HeaderComponent.module.scss";
 import Iconify from "components/Iconify";
 import { GlobalContext, useContext } from "@context/GlobalContext";
 
+import { useAppSelector } from "@store/store";
+
 const HeaderComponent = () => {
+  const { cart } = useAppSelector((state) => state.cart);
+
   const { setCartToggle } = useContext(GlobalContext);
   return (
     <div>
@@ -30,7 +34,9 @@ const HeaderComponent = () => {
               }}
             >
               <Iconify icon={"ic:outline-shopping-bag"} size={32}></Iconify>
-              <span className={styles.button__badge}>3</span>
+              {cart.length > 0 && (
+                <span className={styles.button__badge}>{cart.length}</span>
+              )}
             </button>
           </div>
           <div className={styles.header__mobile}>
@@ -41,7 +47,9 @@ const HeaderComponent = () => {
               }}
             >
               <Iconify icon={"ic:outline-shopping-bag"} size={32}></Iconify>
-              <span className={styles.button__badge}>3</span>
+              {cart.length > 0 && (
+                <span className={styles.button__badge}>{cart.length}</span>
+              )}
             </button>
           </div>
         </div>

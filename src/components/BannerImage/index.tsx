@@ -5,7 +5,12 @@ const BannerImage = () => {
     <div className={`${styles.container} `}>
       <div className={`${styles["grid-12"]} ${styles["py-1"]}`}>
         <div className={styles.banner}>
-          <img src="/images/banner.jpg" alt="Fast food banner" width={"100%"} />
+          <img
+            src="/images/banner.jpg"
+            alt="Fast food banner"
+            width={"100%"}
+            loading="lazy"
+          />
         </div>
       </div>
     </div>
