@@ -6,6 +6,7 @@ export interface IProduct {
   unit: string;
   color: string;
   img: string;
+  qty: number;
 }
 
 export interface IProductItem {

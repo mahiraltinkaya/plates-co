@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Suspense } from "react";
 import styles from "modules/global.module.scss";
-import PlatesCard from "components/PlatesCard";
 
 import { IProduct, IMenu } from "index.d";
+
+const PlatesCard = React.lazy(() => import("components/PlatesCard"));
 
 const MenuRenderer: React.FC<IMenu> = ({ products }) => {
   return (
@@ -13,7 +14,9 @@ const MenuRenderer: React.FC<IMenu> = ({ products }) => {
           key={i}
           className={`${styles["grid-xs-12"]} ${styles["grid-sm-6"]}  ${styles["grid-md-4"]} ${styles["pa-2"]}`}
         >
-          <PlatesCard product={item}></PlatesCard>
+          <Suspense fallback={<div>Loading...</div>}>
+            <PlatesCard product={item}></PlatesCard>
+          </Suspense>
         </div>
       ))}
     </div>

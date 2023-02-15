@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IProduct } from "index.d";
 
 export interface ICartStates {
@@ -13,13 +13,22 @@ export const cartSlice = createSlice({
   name: "counter",
   initialState,
   reducers: {
-    add(state, action) {
-      state.cart.push(action.payload);
+    addItem(state, action: PayloadAction<IProduct>) {
+      if (state.cart.some((x) => x.id === action.payload.id)) {
+        state.cart = state.cart.map((x) =>
+          x.id === action.payload.id ? { ...x, qty: x.qty + 1 } : x
+        );
+      } else {
+        state.cart.push(action.payload);
+      }
+    },
+    deleteItem(state, action: PayloadAction<IProduct>) {
+      state.cart = state.cart.filter((x) => x.id !== action.payload.id);
     },
   },
   extraReducers: () => {},
 });
 
-export const { add } = cartSlice.actions;
+export const { addItem, deleteItem } = cartSlice.actions;
 
 export default cartSlice.reducer;
