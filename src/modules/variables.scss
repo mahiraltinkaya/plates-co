@@ -1,0 +1,41 @@
+$unit: em;
+$alignments: 1, 2, 3, 4, 5, 6;
+$spacing: 1, 2, 3, 4, 5;
+$grids: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+$text-aligns: center, left, right;
+$flexs: flex, block, none;
+$flex-align: center, start, end;
+$flex-justify: center, flex-start, flex-end, space-between, space-around;
+
+$media-xs: 320px;
+$media-sm: 576px;
+$media-md: 768px;
+$media-lg: 960px;
+$media-xl: 1200px;
+$media-2xl: 1400px;
+
+$typographies: (
+  h1: 2.5rem,
+  h2: 2rem,
+  h3: 1.75rem,
+  h4: 1.5rem,
+  h5: 1.25rem,
+  h6: 1rem,
+);
+$font-sizes: (
+  xs: 10px,
+  sm: 12px,
+  md: 14px,
+  lg: 18px,
+  xl: 20px,
+  2xl: 24px,
+);
+
+$colors: (
+  primary: #2196f3,
+  secondary: #4db6ac,
+  success: #8bc34a,
+  error: #f44336,
+  warning: #ff9800,
+  info: #00bcd4,
+);

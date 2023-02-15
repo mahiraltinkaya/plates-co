@@ -1,0 +1,81 @@
+@import "./global.module.scss";
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 74px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  padding: 0 auto;
+  .header__content {
+    max-width: 1200px;
+    padding: 0px 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header__logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header__section {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+
+      nav {
+        a {
+          display: inline-block;
+          vertical-align: top;
+          text-decoration: none;
+          color: #222;
+          padding: 20px;
+          text-align: left;
+          margin-left: auto;
+          margin-right: auto;
+
+          &:hover {
+            color: #5e1cd4;
+            transition: 0.3s;
+          }
+        }
+      }
+      .contact__button {
+        width: 118px;
+        height: 44px;
+        border: none;
+        background-color: #5e1cd4;
+        color: white;
+        border-radius: 7px;
+        cursor: pointer;
+        &:hover {
+          background-color: #3898ec;
+          transition: 0.3s;
+        }
+        &:active {
+          background-color: #2681d0;
+          transition: 0.3s;
+        }
+      }
+      @media screen and (max-width: $media-md) {
+        display: none;
+      }
+    }
+    .header__mobile {
+      display: none;
+
+      @media screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
+}
